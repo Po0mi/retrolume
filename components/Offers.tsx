@@ -9,21 +9,21 @@ const offers = [
     alt: "Hand holding instax prints",
     title: "Basic Prints",
     description: "High-quality instax prints perfect for everyday memories.",
-    price: "₱18 / print",
+    price: "₱65 / print",
   },
   {
     image: "/images/event-packages.webp",
     alt: "Camera boxes on grass",
     title: "Event Packages",
     description: "Ideal for birthdays, weddings, and special occasions.",
-    price: "Starts at ₱1,200",
+    price: "Starts at ₱2000",
   },
   {
     image: "/images/custom-sets.webp",
     alt: "Camera printing a photo",
     title: "Custom Sets",
     description: "Personalized layouts and designs made just for you.",
-    price: "Starts at ₱250",
+    price: "Starts at ₱350",
   },
 ];
 
