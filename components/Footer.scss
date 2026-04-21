@@ -1,0 +1,251 @@
+.footer {
+  width: 100%;
+
+  // ── Contact section ──────────────────────────────────────
+  .footer-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 5rem 4rem;
+    background-color: var(--bg-cream);
+    position: relative;
+    overflow: hidden;
+
+    // Info column
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+
+      .contact-title {
+        font-family: var(--font-main-title);
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 500;
+        line-height: 1.1;
+        color: var(--text-dark);
+      }
+
+      .footer-divider {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .footer-divider .line {
+        width: 100px;
+        height: 1px;
+        background-color: var(--text-dark);
+        opacity: 0.4;
+      }
+
+      .footer-divider .diamond {
+        font-size: 25px;
+        color: var(--text-dark);
+        opacity: 1;
+      }
+
+      .contact-body {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: var(--text-dark);
+        line-height: 1.7;
+        opacity: 0.8;
+      }
+
+      .contact-cta {
+        display: inline-block;
+        position: relative;
+        max-width: 160px;
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--bg-cream);
+        background-color: var(--text-dark);
+        border: 1px solid var(--text-dark);
+        padding: 0.7rem 2.5rem 0.7rem 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+        margin-top: 3rem;
+
+        @media (max-width: 1024px) {
+          margin-top: 2.5rem;
+        }
+
+        &::after {
+          content: "⟶";
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          color: var(--bg-cream);
+          transition: transform 0.25s ease;
+        }
+
+        &:hover::after {
+          transform: translateY(-50%) translateX(5px);
+        }
+      }
+    }
+
+    // Links column
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 300;
+        color: var(--text-dark);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+
+        &:not(.contact-link--static):hover {
+          opacity: 0.6;
+        }
+
+        .contact-link-icon {
+          font-size: 1.1rem;
+          width: 22px;
+          text-align: center;
+          flex-shrink: 0;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    // Decorative column
+    .contact-deco {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .contact-flower {
+        width: 300px;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+      }
+    }
+  }
+
+  // ── Photo strip ──────────────────────────────────────────
+  .footer-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--text-dark);
+
+    .strip-item {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+
+      .strip-image {
+        object-fit: cover;
+        object-position: center;
+        filter: sepia(0.2) brightness(0.85);
+        transition:
+          filter 0.3s ease,
+          transform 0.4s ease;
+      }
+
+      &:hover .strip-image {
+        filter: sepia(0) brightness(1);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // ── Bottom bar ───────────────────────────────────────────
+  .footer-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: var(--text-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    .footer-copy {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+
+      .footer-logo {
+        font-family: var(--font-main-title);
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--bg-cream);
+        letter-spacing: 0.02em;
+      }
+
+      .footer-tagline {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .footer-note {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: right;
+    }
+  }
+
+  // ── Mobile ───────────────────────────────────────────────
+  @media (max-width: 1024px) {
+    .footer-contact {
+      grid-template-columns: 1fr;
+      padding: 4rem 1.5rem;
+
+      .contact-deco {
+        display: none;
+      }
+    }
+
+    .footer-strip {
+      grid-template-columns: repeat(4, 1fr);
+
+      .strip-item:nth-child(n + 5) {
+        display: none;
+      }
+    }
+
+    .footer-bar {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
+      text-align: center;
+
+      .footer-copy,
+      .footer-note {
+        text-align: center;
+      }
+    }
+  }
+}

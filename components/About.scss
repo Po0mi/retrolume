@@ -1,0 +1,222 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 100svh;
+  background-color: var(--text-medium);
+  overflow: hidden;
+
+  .about-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    position: relative;
+
+    .about-camera {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      object-fit: contain;
+      display: inline-block;
+      background: #fff;
+      padding: 16px 16px 40px; /* bottom is bigger like real polaroid */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transform: rotate(-2deg);
+      border-radius: 2px;
+      transition: transform 0.3s ease;
+    }
+
+    .flower-wrapper {
+      position: absolute;
+      top: 70%;
+      right: 0;
+      left: -10%;
+      transform: translateY(-50%);
+      width: clamp(400px, 100vw, 500px);
+      pointer-events: none;
+      z-index: 5;
+
+      @media (max-width: 1024px) {
+        width: 28vw;
+        left: 65%;
+      }
+
+      .flower-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+        transform: rotate(-30deg);
+      }
+    }
+  }
+
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem;
+    color: var(--bg-cream);
+    position: relative;
+
+    .about-eyebrow {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
+    }
+
+    .about-title {
+      font-family: var(--font-main-title);
+      font-size: clamp(1rem, 6vw, 6rem);
+      font-weight: 500;
+      line-height: 0.8;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-divider {
+      border-top: 1px solid var(--bg-cream);
+      width: 300px;
+      position: relative;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      &::after {
+        content: "✦";
+        position: absolute;
+        right: -25px;
+        top: -2px;
+        transform: translateY(-50%);
+        font-size: 25px;
+        color: var(--bg-cream);
+      }
+    }
+
+    .about-body {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-top: 1.5rem;
+    }
+
+    .about-cta {
+      display: inline-block;
+      position: relative;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      margin-top: 2.5rem;
+      transition: all 0.25s ease;
+      max-width: 180px;
+
+      &::after {
+        content: "⟶";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: var(--bg-cream);
+        transition: transform 0.25s ease;
+      }
+
+      &:hover::after {
+        transform: translateY(-50%) translateX(5px);
+      }
+    }
+    .flower-svg-wrapper {
+      position: absolute;
+      top: 90%;
+      right: 0;
+      left: 80%;
+      transform: translateY(-50%);
+      width: clamp(100px, 10vw, 100px);
+      pointer-events: none;
+      z-index: 5;
+      text-align: center;
+
+      @media (max-width: 1024px) {
+        width: 28vw;
+        left: 65%;
+      }
+
+      .flower-svg {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+        filter: invert(1);
+      }
+      .flower-quote {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+
+    .about-left {
+      padding: 6rem 2rem 2rem;
+
+      .about-camera {
+        max-width: 320px;
+        transform: rotate(-1deg);
+      }
+
+      .flower-wrapper {
+        display: none;
+      }
+    }
+
+    .about-right {
+      padding: 2.5rem 1.5rem 4rem;
+
+      .about-eyebrow {
+        font-size: 1rem;
+      }
+
+      .about-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-divider {
+        width: 100%;
+        max-width: 240px;
+      }
+
+      .about-body {
+        font-size: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .about-cta {
+        margin-top: 2rem;
+      }
+
+      .flower-svg-wrapper {
+        display: none;
+      }
+    }
+  }
+}

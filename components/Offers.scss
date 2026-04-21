@@ -1,0 +1,219 @@
+.offers {
+  background-color: var(--bg-cream);
+  min-height: 100svh;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .flower-wrapper {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    left: 75%;
+    transform: translateY(-50%);
+    width: clamp(400px, 100vw, 500px);
+    pointer-events: none;
+    z-index: 5;
+
+    @media (max-width: 1024px) {
+      width: 28vw;
+      left: 65%;
+    }
+
+    .flower-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+      transform: rotate(0deg);
+    }
+  }
+  .offers-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .offers-eyebrow {
+      font-family: var(--font-main-title);
+      font-size: 3rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-dark);
+    }
+
+    .offers-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .offers-divider .line {
+      width: 200px;
+      height: 1px;
+      background-color: var(--text-dark);
+      opacity: 0.4;
+    }
+
+    .offers-divider .diamond {
+      font-size: 25px;
+      color: var(--text-dark);
+      opacity: 1;
+    }
+  }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .offer-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: 0.75rem 0.75rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(74, 55, 40, 0.12);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:nth-child(1) {
+      transform: rotate(-1.5deg);
+    }
+    &:nth-child(2) {
+      transform: rotate(0.5deg);
+    }
+    &:nth-child(3) {
+      transform: rotate(-0.8deg);
+    }
+
+    &:hover {
+      transform: rotate(0deg) translateY(-6px) !important;
+      box-shadow: 0 12px 40px rgba(74, 55, 40, 0.2);
+    }
+
+    .offer-tape {
+      width: 60px;
+      height: 22px;
+      background-color: var(--bg-beige);
+      opacity: 0.85;
+      margin: -1.5rem auto 0.75rem;
+      position: relative;
+      z-index: 2;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 3px,
+          rgba(255, 255, 255, 0.25) 3px,
+          rgba(255, 255, 255, 0.25) 6px
+        );
+      }
+    }
+
+    .offer-image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      margin-bottom: 0;
+
+      .offer-badge {
+        position: absolute;
+        top: 0.6rem;
+        left: 0.6rem;
+        z-index: 2;
+        background-color: var(--text-dark);
+        color: var(--bg-cream);
+        font-size: 0.6rem;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .offer-image {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .offer-title {
+      font-family: var(--font-main-title);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-top: 1.25rem;
+      padding: 0 0.5rem;
+    }
+
+    .offer-description {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.6;
+      opacity: 0.75;
+      flex: 1;
+      padding: 0 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .offer-price-row {
+      margin-top: 1rem;
+      padding: 0.75rem 0.5rem 0;
+      border-top: 1px solid rgba(74, 55, 40, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .offer-price {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text-dark);
+      }
+
+      .offer-cta {
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-dark);
+        text-decoration: none;
+        border-bottom: 1px solid var(--text-dark);
+        padding-bottom: 1px;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 5rem 2rem;
+
+    .offers-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}
