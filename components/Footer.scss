@@ -74,6 +74,7 @@
 
         @media (max-width: 1024px) {
           margin-top: 2.5rem;
+          max-width: 140px;
         }
 
         &::after {
@@ -222,9 +223,45 @@
     .footer-contact {
       grid-template-columns: 1fr;
       padding: 4rem 1.5rem;
+      text-align: center;
 
       .contact-deco {
         display: none;
+      }
+      .contact-cta::after {
+        display: none;
+      }
+
+      .contact-info {
+        align-items: center;
+
+        .contact-title {
+          font-size: clamp(1.8rem, 8vw, 2.4rem);
+        }
+
+        .footer-divider {
+          justify-content: center;
+        }
+
+        .contact-body {
+          text-align: center;
+        }
+
+        .contact-cta {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .contact-cta::after {
+          right: 10px;
+        }
+      }
+
+      .contact-links {
+        align-items: center;
+
+        .contact-link {
+          justify-content: center;
+        }
       }
     }
 
@@ -239,7 +276,7 @@
     .footer-bar {
       grid-template-columns: 1fr;
       padding: 2rem 1.5rem;
-      gap: 1rem;
+      gap: 0.75rem;
       text-align: center;
 
       .footer-copy,

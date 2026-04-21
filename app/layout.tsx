@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "@/styles/global.scss";
 import Navbar from "@/layouts/Navbar";
+import SmoothScroll from "@/layouts/SmoothScroll";
 
 // 1. Load Google Fonts
 const lato = Lato({
@@ -67,7 +68,9 @@ export default function RootLayout({
     >
       <body className="font-body">
         <Navbar />
-        <main>{children}</main>
+        <SmoothScroll>
+          <main>{children}</main>
+        </SmoothScroll>
       </body>
     </html>
   );

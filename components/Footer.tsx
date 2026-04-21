@@ -4,20 +4,23 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { useFooterAnimation } from "@/hooks/useFooterAnimation";
 
 const galleryImages = [
-  { src: "/images/gallery-1.jpg", alt: "Instax moment 1" },
-  { src: "/images/gallery-2.jpg", alt: "Instax moment 2" },
-  { src: "/images/gallery-3.jpg", alt: "Instax moment 3" },
-  { src: "/images/gallery-4.jpg", alt: "Instax moment 4" },
-  { src: "/images/gallery-5.jpg", alt: "Instax moment 5" },
-  { src: "/images/gallery-6.jpg", alt: "Instax moment 6" },
-  { src: "/images/gallery-7.jpg", alt: "Instax moment 7" },
+  { src: "/images/gallery-1.webp", alt: "Instax moment 1" },
+  { src: "/images/gallery-2.webp", alt: "Instax moment 2" },
+  { src: "/images/gallery-3.webp", alt: "Instax moment 3" },
+  { src: "/images/gallery-4.webp", alt: "Instax moment 4" },
+  { src: "/images/gallery-5.webp", alt: "Instax moment 5" },
+  { src: "/images/gallery-6.webp", alt: "Instax moment 6" },
+  { src: "/images/gallery-7.webp", alt: "Instax moment 7" },
 ];
 
 const Footer = () => {
+  const footerRef = useFooterAnimation();
+
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer" id="contact" ref={footerRef}>
       {/* ── Contact ───────────────────────────────────── */}
       <div className="footer-contact">
         <div className="contact-info">

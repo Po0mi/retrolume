@@ -1,13 +1,16 @@
 "use client";
 import "./Testimonials.scss";
 import Image from "next/image";
+import { useTestimonialsAnimation } from "@/hooks/useTestimonialsAnimation";
 
 const Testimonials = () => {
+  const sectionRef = useTestimonialsAnimation();
+
   return (
-    <section className="testimonials" id="testimonials">
+    <section className="testimonials" id="testimonials" ref={sectionRef}>
       <div className="testimonials-left">
         <Image
-          src="/images/polaroid-scatter.jpg"
+          src="/images/polaroid-scatter.webp"
           alt="Scattered polaroid photos"
           fill
           className="testimonials-bg-image"
@@ -34,7 +37,7 @@ const Testimonials = () => {
             <div className="testimonials-tape" />
             <div className="testimonials-photo-wrapper">
               <Image
-                src="/images/review-photo.jpg"
+                src="/images/review-photo.webp"
                 alt="Happy customer with prints"
                 fill
                 className="testimonials-photo"

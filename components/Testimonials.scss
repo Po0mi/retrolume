@@ -152,28 +152,42 @@
     min-height: unset;
 
     .testimonials-left {
-      min-height: 220px;
+      min-height: 240px;
 
       .testimonials-overlay {
         background: linear-gradient(
           to bottom,
-          transparent 40%,
-          var(--bg-beige) 100%
+          transparent 30%,
+          var(--bg-cream) 100%
         );
       }
     }
 
-    .testimonials-center {
-      padding: 2rem 1.5rem 1rem;
-
-      .testimonials-quote {
-        max-width: 100%;
-      }
-    }
-
     .testimonials-right {
-      padding: 1.5rem 1.5rem 3rem;
-      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 1.5rem 3.5rem;
+      gap: 2rem;
+
+      .testimonials-content {
+        .testimonials-quote {
+          font-size: clamp(1.1rem, 5vw, 1.4rem);
+        }
+      }
+
+      .testimonials-visuals {
+        align-self: center;
+      }
+
+      .testimonials-polaroid {
+        width: 180px;
+        transform: rotate(6deg);
+      }
+
+      .testimonials-stamp {
+        width: 75px;
+        height: 75px;
+      }
     }
   }
 }

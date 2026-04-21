@@ -1,24 +1,25 @@
 "use client";
 import "./Offers.scss";
 import Image from "next/image";
+import { useOffersAnimation } from "@/hooks/useOffersAnimation";
 
 const offers = [
   {
-    image: "/images/basic-prints.jpg",
+    image: "/images/basic-prints.webp",
     alt: "Hand holding instax prints",
     title: "Basic Prints",
     description: "High-quality instax prints perfect for everyday memories.",
     price: "₱18 / print",
   },
   {
-    image: "/images/event-packages.jpg",
+    image: "/images/event-packages.webp",
     alt: "Camera boxes on grass",
     title: "Event Packages",
     description: "Ideal for birthdays, weddings, and special occasions.",
     price: "Starts at ₱1,200",
   },
   {
-    image: "/images/custom-sets.jpg",
+    image: "/images/custom-sets.webp",
     alt: "Camera printing a photo",
     title: "Custom Sets",
     description: "Personalized layouts and designs made just for you.",
@@ -27,8 +28,10 @@ const offers = [
 ];
 
 const Offers = () => {
+  const sectionRef = useOffersAnimation();
+
   return (
-    <section className="offers" id="offers">
+    <section className="offers" id="offers" ref={sectionRef}>
       <div className="flower-wrapper">
         <Image
           src="/images/flower.webp"

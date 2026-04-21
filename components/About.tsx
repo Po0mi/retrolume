@@ -1,13 +1,16 @@
 "use client";
 import "./About.scss";
 import Image from "next/image";
+import { useAboutAnimation } from "@/hooks/useAboutAnimation";
 
 const About = () => {
+  const sectionRef = useAboutAnimation();
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" ref={sectionRef}>
       <div className="about-left">
         <Image
-          src="/images/camera.png"
+          src="/images/camera.webp"
           alt="Instax camera with photos"
           width={600}
           height={600}
@@ -41,9 +44,6 @@ const About = () => {
           Compact, stylish, and designed to print the moments that matter.
           Because some memories deserve more than just a screen.
         </p>
-        <a href="#" className="about-cta">
-          Learn More
-        </a>
         <div className="flower-svg-wrapper">
           {" "}
           <Image

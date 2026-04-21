@@ -1,10 +1,13 @@
 "use client";
 import "./Hero.scss";
 import Image from "next/image";
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
 const Hero = () => {
+  const sectionRef = useHeroAnimation();
+
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" ref={sectionRef}>
       <div className="hero-container">
         <div className="hero-left">
           <span className="hero-eyebrow">instax printing service Iloilo</span>
@@ -18,7 +21,7 @@ const Hero = () => {
             your favorite moments into tangible keepsakes you can hold, share,
             and treasure forever.
           </p>
-          <a href="#" className="hero-cta">
+          <a href="#offers" className="hero-cta">
             Explore Offers
           </a>
         </div>

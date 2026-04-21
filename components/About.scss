@@ -108,37 +108,6 @@
       margin-top: 1.5rem;
     }
 
-    .about-cta {
-      display: inline-block;
-      position: relative;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      padding: 0.8rem 2rem;
-      text-decoration: none;
-      margin-top: 2.5rem;
-      transition: all 0.25s ease;
-      max-width: 180px;
-
-      &::after {
-        content: "⟶";
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 18px;
-        color: var(--bg-cream);
-        transition: transform 0.25s ease;
-      }
-
-      &:hover::after {
-        transform: translateY(-50%) translateX(5px);
-      }
-    }
     .flower-svg-wrapper {
       position: absolute;
       top: 90%;
@@ -189,6 +158,8 @@
 
     .about-right {
       padding: 2.5rem 1.5rem 4rem;
+      align-items: center;
+      text-align: center;
 
       .about-eyebrow {
         font-size: 1rem;
@@ -208,10 +179,6 @@
       .about-body {
         font-size: 1rem;
         margin-top: 1.25rem;
-      }
-
-      .about-cta {
-        margin-top: 2rem;
       }
 
       .flower-svg-wrapper {
