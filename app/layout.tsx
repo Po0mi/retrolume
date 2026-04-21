@@ -35,16 +35,12 @@ const boska = localFont({
     { path: "./fonts/Boska-Bold.otf", weight: "700" },
     { path: "./fonts/Boska-Black.otf", weight: "900" },
     // Italics
-    {
-      path: "./fonts/Boska-Extralightitalic.otf",
-      weight: "200",
-      style: "italic",
-    },
-    { path: "./fonts/Boska-Lightitalic.otf", weight: "300", style: "italic" }, // ✅ Fixed missing slash here
+    { path: "./fonts/Boska-ExtralightItalic.otf", weight: "200", style: "italic" },
+    { path: "./fonts/Boska-LightItalic.otf", weight: "300", style: "italic" },
     { path: "./fonts/Boska-Italic.otf", weight: "400", style: "italic" },
-    { path: "./fonts/Boska-Mediumitalic.otf", weight: "500", style: "italic" },
-    { path: "./fonts/Boska-Bolditalic.otf", weight: "700", style: "italic" },
-    { path: "./fonts/Boska-Blackitalic.otf", weight: "900", style: "italic" },
+    { path: "./fonts/Boska-MediumItalic.otf", weight: "500", style: "italic" },
+    { path: "./fonts/Boska-BoldItalic.otf", weight: "700", style: "italic" },
+    { path: "./fonts/Boska-BlackItalic.otf", weight: "900", style: "italic" },
   ],
   variable: "--font-boska",
   display: "swap",
